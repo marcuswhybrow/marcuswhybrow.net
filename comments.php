@@ -72,17 +72,26 @@
             <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
         <?php else : ?>
 
-            <p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-            <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
+            <p>
+                <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label>
+                <br>
+                <input type="text" name="author" class="text" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+            </p>
 
-            <p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-            <label for="email"><small>Mail <small>(will not be published or shared)</small> <?php if ($req) echo "(required)"; ?></small></label></p>
+            <p>
+                <label for="email"><small>Mail <small>(will not be published or shared)</small> <?php if ($req) echo "(required)"; ?></small></label>
+                <br>
+                <input type="text" name="email" class="text" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+            </p>
 
-            <p><input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
-            <label for="url"><small>Website</small></label></p>
+            <p>
+                <label for="url"><small>Website</small></label>
+                <br>
+                <input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
+            </p>
         <?php endif; ?>
 
-        <p><small>You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>
+        <p class="small">You can use these tags: <code><?php echo allowed_tags(); ?></code></p>
         <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
 
         <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
@@ -91,7 +100,7 @@
         <?php do_action('comment_form', $post->ID); ?>
     </form>
 
-    <p>By submitting a comment here you grant <?php bloginfo('name'); ?> a perpetual license to reproduce your words and name/web site in attribution. Inappropriate or irrelevant comments will be removed at an admin's discretion.</p>
+    <p class="small">By submitting a comment here you grant <?php bloginfo('name'); ?> a perpetual license to reproduce your words and name/web site in attribution. Inappropriate or irrelevant comments will be removed at <?php bloginfo('name'); ?>'s discretion.</p>
     <?php endif; // If registration required and not logged in ?>
     
 </div><!-- end .comments_reply -->

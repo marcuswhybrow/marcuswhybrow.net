@@ -18,7 +18,7 @@
 <body>
 
 <div id="container">
-    <div id="header">
+    <div id="header" class="container">
         <div id="topTitle">
             <h1><a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
             <p><?php bloginfo('description'); ?></p>

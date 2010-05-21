@@ -1,4 +1,4 @@
-<div id="footer">
+<div id="footer" class="container">
     <p>
         <a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>
     </p>

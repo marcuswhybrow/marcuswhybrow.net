@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="content">
+<div id="content" class="container">
     <div class="post" id="post-<?php the_ID(); ?>">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <h2><a href="<?php echo get_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
@@ -34,5 +34,5 @@
     </div><!-- end .post & #post"#" -->
 </div><!-- end #content -->
 
-<?php get_sidebar(); ?>
+<?php /* get_sidebar(); */ ?>
 <?php get_footer(); ?>
