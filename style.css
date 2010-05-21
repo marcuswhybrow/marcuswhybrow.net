@@ -1,0 +1,518 @@
+/*
+Theme Name: MarcusWhybrowTHeme
+Theme URI: http:/marcuswhybrow.net/
+Description: Marcus Whybrow's site theme (based on Elliot Jay Stocks naked wordpress theme <a href="http://elliotjaystocks.com">http://elliotjaystocks.com</a>)
+Version: 1 (WP2.7.1)
+Author: Marcus Whybrow
+Author URI: http://marcuswhybrow.net
+Tags:
+*/
+
+@import "style/css/reset.css";
+@import "style/css/typography.css";
+@import "style/css/layout.css";
+
+body {
+	background: url(style/images/bg.png) top left repeat-x #fafafa;
+	
+	font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	width: 100%;
+}
+
+p, pre {
+	margin-bottom: 20px;
+}
+
+#page-wrap {
+	width: 936px;
+	margin: 0 auto;
+}
+
+#wp-footer {
+	display: none;
+}
+
+#all {
+	background: url(style/images/header.png) top center no-repeat;
+	overflow: hidden;
+	min-height: 500px;
+	width: 100%;
+}
+
+#header {
+	float: left;
+	clear: both;
+	
+	height: 150px;
+	width: 100%;
+}
+
+#header h1,
+#header p {
+	display: none;
+}
+
+#header ul {
+	position: relative;
+	top: 110px;
+	left: 250px;
+}
+
+#header ul li {
+	display: inline;
+	float: left;
+	
+	margin: 0 5px;
+	height: 30px
+}
+
+#header ul li a {
+	height: 20px;
+	padding: 5px 10px;
+	margin: 0 0 10px 0;
+	
+	display: block;
+	
+	background: url(style/images/button.png) repeat;
+	
+	text-decoration: none;
+	color: #9d8248;
+}
+
+#header ul li a:hover {
+	color: #6d5a32;
+}
+
+#header ul li a.this {
+	background: white;
+	
+	margin: 0;
+	height: 30px;
+	padding-bottom: 5px;
+	
+	font-variant: small-caps;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#header ul li a.this:hover {
+	color: #9d8248;
+}
+
+#footer {
+	float: left;
+	clear: both;
+	
+	width: 100%;
+}
+
+#content {
+	padding: 0 0 9px 18px;
+	
+	width: 918px;
+	height: 100%;
+	
+	float: left;
+	clear: both;
+	
+	background-color: #fff;
+	
+	z-index: 50;
+	min-height: 350px;
+}
+
+#side-bar {
+	float: right;
+	
+	width: 180px;
+	padding: 20px 20px 20px 0; 
+	
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+h2 {
+	font-family: "Helvetica",Arial,Verdana,sans-serif;
+	font-size: 24px;
+	
+	padding: 5px 0;
+}
+
+h2.error {
+	font-size: 40px;
+	line-height: 40px;
+	color: #4c1c11;
+}
+
+/** Post Edit Link **/
+
+.post-edit-link,
+.comment-edit-link,
+div.category,
+div.comments {
+
+	float: left;
+	
+	text-decoration: none;
+	color: #6a552c;
+	
+	background-color: #faf4ec;
+	
+	border: 1px solid #e5dcc7;
+	-moz-border-radius: 3px;
+	
+	padding: 0 6px;
+	margin-right: 6px;
+}
+
+.post-edit-link:hover,
+.comment-edit-link:hover,
+div.category:hover,
+div.comments:hover {
+	background-color: #f5ecd7;
+	-moz-border-radius: 3px;
+}
+
+div.category a,
+div.comments a {
+	text-decoration: none;
+	color: #6a552c;
+}
+
+div.comments.disabled {
+	background: #f2f2f2;
+	cursor: default;
+	color: gray;
+	border: 1px solid #d3d3d3;
+}
+
+.post-edit-link {
+	background: #e2edff;
+	color: #002f8d;
+	border: 1px solid #91bbff;
+}
+
+.post-edit-link:hover {
+	background:  #b4d1ff;
+}
+
+div.post ol li {
+	list-style: decimal;
+}
+
+div.post ol {
+	padding: 10px 0 0 20px;
+}
+
+/** Archival Styles **/
+
+div#search div.post {
+	margin-top: 20px;
+}
+
+/** Post Styles **/
+
+div.post h2,
+div#archive h3,
+div#search h3 {
+	font-size: 18px;
+	color: #ad341a;
+}
+
+div.post h2 a,
+div#archive h3 a,
+div#search h3 a {
+	color: #ad341a;
+	text-decoration: none;
+}
+
+div.post h2 a:hover,
+div#archive h3 a:hover,
+div#search h3 a:hover {
+	border-bottom: 1px dotted #ad341a;
+}
+
+div.post-buttons {
+	padding: 5px 0;
+}
+
+/** Comments **/
+
+/* Single comment */
+ol#comments li {
+/* 	border: 1px solid #6a552c; */
+	background: url(style/images/corner.png) no-repeat bottom left #f0e6d1;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	
+	position: relative;
+	left: -45px;
+	
+	width: 412px;
+}
+
+/* Information block */
+ol#comments li div.comment-meta {
+	font-family: "Helvetica",Arial,Verdana,sans-serif;
+/* 	border-bottom: 1px solid #6a552c; */
+}
+
+/* Picture */
+ol#comments li div.comment-meta img.avatar {
+	float: left;
+	margin: 5px;
+/* 	border: 1px solid #6a552c; */
+}
+
+/* Name line */
+ol#comments li div.comment-meta p.comment-intro {
+	float: left;
+	padding: 0;
+	margin: 5px 0 0 0;
+	position: relative;
+	left: 4px;
+}
+
+/* just the Name */
+ol#comments li div.comment-meta p.comment-intro cite a {
+	color: #ad341a;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+ol#comments li div.comment-meta p.comment-intro cite a:hover {
+/* 	border-bottom: 1px dotted #ad341a; */
+}
+
+/* Comment date */
+ol#comments li div.comment-meta p.comment-date {
+	float: left;
+	padding: 0;
+}
+
+/* edit link */
+ol#comments li div.comment-meta a.comment-edit-link {
+	float: left;
+	position: absolute;
+}
+
+/* Comment content */
+ol#comments li div.comment-content {
+	background: white;
+	width: 695px;
+	position: relative;
+	left: 45px;
+}
+
+ol#comments li div.comment-content p {
+	padding: 5px;
+}
+
+.page2col {
+	margin: 20px 0 0 0;
+	width: 700px;
+	float: left;
+}
+
+
+/** Wordpress Styling **/
+
+#blog {
+	float: left;
+	width: 279px;
+	
+	text-align: justify;
+	
+	margin-top: 18px;
+	padding-right: 9px;
+	/* border-right: 1px solid #CCC; */}
+
+div.post {
+	padding-bottom: 20px;
+}
+
+div.post-date,
+div#archive div.archive-time {
+
+	float: right;
+	background: #7B6337;
+	color: #FFF;
+	
+	padding: 5px 10px 5px 5px;
+	
+	z-index: 90;
+	display: block;
+}
+
+div.post-date-wrapper {
+	float: left;
+	position: absolute;
+	
+	left: -518px;
+	width: 500px;
+}
+
+/** Post Comment information **/
+
+/* Comment information wrapper */
+
+#comment-reply {
+	margin: 10px 0 0 0;
+}
+
+/** Single Post **/
+
+#single-post {
+	margin: 18px 18px 9px 0;
+}
+
+form#commentform input,
+form#commentform label {
+	float: left;
+	clear: both;
+	
+	/* width: 279px; */
+	width: 275px;
+}
+
+form#commentform textarea {
+	float: left;
+	clear: both;
+	
+	width: 279px;
+}
+
+/** Central collumn **/
+
+#projects {
+	float: left;
+	width: 364px;
+	
+	padding: 1px 9px 0;
+	text-align: justify;
+}
+
+/** Profile Box **/
+
+#profile {
+	height: 250px;
+	width: 246px;
+	background: #FFE7E8;
+	border-bottom: 1px solid #CCC;
+	
+	overflow: hidden;
+	padding-top: 1px;
+}
+
+#profile h2 {
+	float: left;
+	width: 100%;
+	text-align: center;
+	
+	font-family: "Abadi MT Condensed Extra Bold";
+	color: #FFF7F8;
+	
+	font-weight: bold;
+	font-size: 70px;
+	line-height: 70px;
+	
+	margin-top: 100px;
+	
+	-moz-user-select: none;
+}
+
+/** Twitter Box **/
+
+#twitter {
+	float: right;
+	width: 247px;
+	height: auto;
+}
+
+#twitter_div {
+	padding: 9px;
+}
+
+/* A single twitter */
+ul#twitter_update_list li {
+	position: relative;
+	
+	margin: 0 0 20px;
+	
+	width: 100%;
+}
+
+/* Twitter text */
+ul#twitter_update_list li span {
+	float:  left;
+	clear: both;	
+	width: 100%;
+}
+
+/* Twitter links (twitter time) */
+ul#twitter_update_list li a {
+	color: #c9935c;
+	float: left;
+	clear: both;
+	text-decoration: none;
+	text-align: center;
+	
+	width: 100%;
+}
+
+ul#twitter_update_list li a:hover {
+	color: #8f4e00;
+}
+
+/* Exclude links in text */
+ul#twitter_update_list li span a {
+	float: none;
+	
+	margin: 0;
+	color: #ff938a;
+	
+	width: auto;
+	
+	background-color: none;
+}
+
+ul#twitter_update_list li span a:hover {
+	color: red;
+}
+
+/** Clear Fix **/
+
+.clearfix:after,
+ul#twitter_update_list li:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix,
+#twitter_div ul#twitter_update_list li {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix,
+html[xmlns] ul#twitter_update_list li {
+	display: block;
+}
+ 
+* html .clearfix,
+* html ul#twitter_update_list li {
+	height: 1%;
+}
+
+/** Images **/
+
+img.right {
+	float: right;
+	
+	position: relative;
+	left: 9px;
+}
