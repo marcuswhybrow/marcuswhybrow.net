@@ -1,35 +1,26 @@
 /* 
-Theme Name: whiteboard
-Theme URL: http://whiteboardframework.com/
-Description: A blank theme for you to draw on.
-Author: Brian Purkiss
-Author URI: http://brianpurkiss.com
-Version: 2.0.1
+Theme Name: MarcusWhybrowTheme
+Theme URL: http://github.com/marcuswhybrow/marcuswhybrow.net
+Description: A clean theme for Marcus's blog
+Author: Marcus Whybrow
+Author URI: http://marcuswhybrow.net
 
-Obviously, you may edit the above info upon your customization.
-Though I wouldn't mind a link somewhere... *hint hint*
+A modification of the Whiteboard blank theme for Wordpress (http://whiteboardframework.com/)
 */
-
-/*  The following CSS Reset was written by Dejan Cancarevic
-http://stylizedweb.com/2008/02/14/10-best-css-hacks/         */
-
-html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, del, dfn, em, font, img, ins, kbd, q, s, samp, acronym, address, big, cite, code,small, strike, strong, sub, sup, tt, var,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;}caption, th, td {text-align:left;font-weight:normal;}table {border-collapse:separate;border-spacing:0;}blockquote:before,blockquote:after,q:before,q:after {content: "";}blockquote, q {quotes: "" "";}
-{margin:0;padding:0;}
-
 
 /*
 Here is a list of all the <DIV>s in Whiteboard.
 */
 
-#container{}
-.post{}
-.postmeta{}
-.postnavigation{}
-#searchform{}
-#sidebar{}
-#comments
-.comments_navigation{}
-.comments_navigation{}
-.comments_reply{}
-.comments_text{}
-.comments_meta{}
+#container                          {  }
+.post                               {  }
+.postmeta                           {  }
+.postnavigation                     {  }
+#searchform                         {  }
+#sidebar                            {  }
+#comments                           {  }
+.comments_navigation                {  }
+.comments_navigation                {  }
+.comments_reply                     {  }
+.comments_text                      {  }
+.comments_meta                      {  }
