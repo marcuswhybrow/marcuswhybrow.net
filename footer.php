@@ -1,4 +1,13 @@
 <div id="footer" class="container">
+    <hr>
+
+    <section class="archives">
+        <h5>Archives</h5>
+        <ul>
+            <?php wp_get_archives('type=monthly'); ?>
+        </ul>
+    </section>
+
     <p>
         <a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a> and <a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a>
     </p>

@@ -20,6 +20,7 @@
             <?php $comment_type = get_comment_type(); ?><?php if($comment_type == 'comment') { ?>
                 <li class="<?php if (the_author('', false) == get_comment_author()) echo 'author'; else echo $oddcomment; ?>" id="comment-<?php comment_ID() ?>">
                     <div class="comments_meta">
+                        <?php echo get_avatar($comment, $size = '96'); ?>
                         <p>by <?php comment_author_link()?></p>
                         <p>On <?php comment_date('F j, Y') ?> at <?php comment_time()?></p>
                     </div>

@@ -5,6 +5,8 @@
         <title><?php wp_title('|', true, 'right'); ?> <?php bloginfo('name'); ?> <?php if ( !wp_title('', true, 'left') ); { ?> | <?php bloginfo('description'); ?> <?php } ?></title>
         <meta name="generator" content="WordPress"> <!-- leave this for stats (or remove for potential security reasons) -->
         <meta name="author" content="Marcus Whybrow">
+
+        <?php wp_head(); ?>	
         
         <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/screen.css" type="text/css" media="screen, projection">
         <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/print.css" type="text/css" media="print">
@@ -14,7 +16,6 @@
         
         <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>">
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-        <?php wp_head(); ?>	
     </head>
 <body>
 
@@ -25,6 +26,6 @@
             <p><?php bloginfo('description'); ?></p>
         </div><!-- end #topTitle -->
         <div id="topNav">
-            <?php wp_page_menu(); ?>
+            <?php /* wp_page_menu(); */ ?>
         </div><!-- end #topNav -->
     </div><!-- end #header -->
