@@ -53,23 +53,27 @@ Here is a list of all the <DIV>s in Whiteboard.
  */
 
 #content h1,
-.post h1,
-.post h2                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+.post h1                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 
 #content h1 a,
-.post h1 a,
-.post h2 a                          { text-decoration: none; color: #586C78; }
+.post h1 a                          { text-decoration: none; color: #586C78; border-bottom: none; }
 
 #content h1 a:hover,
-.post h1 a:hover,
-.post h2 a:hover                    { border-bottom: 4px solid #586C78; }
+.post h1 a:hover                    { border-bottom: 4px solid #586C78; }
+
+.post h2                            { font-size: 1.2em; font-weight: bold; color: #000000; margin-top: 2em; }
+.post h3                            { font-size: 1.1em; color: #586C78; text-transform: uppercase; }
+
+.post a                             { color: #BD1550; border-bottom: 1px dotted #BD1550; text-decoration: none; }
+.post a:hover                       { border-bottom: 3px solid #BD1550; }
+
 
 ul.posts                            { font-size: 0.85em; list-style: none; }
 ul.posts li                         { margin-top: 3px; }
 ul.posts span                       { color: #aaaaaa; font-family: Monaco,"Courier New",monospace; font-size: 0.8em; margin-right: 5px; }
 ul.posts a                          { margin-left: 5px; }
 
-.post-date                          { margin-bottom: 0; }
+.post-date                          { margin-bottom: 0.5em; }
 
 .syntaxhighlighter .lines           { font-size: 0.75em !important; }
 
