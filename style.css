@@ -8,6 +8,8 @@ Author URI: http://marcuswhybrow.net
 A modification of the Whiteboard blank theme for Wordpress (http://whiteboardframework.com/)
 */
 
+body                                { font-family: Palatino,Georgia,"Times New Roman",Times,serif; font-size: 18px; }
+
 /*
 Here is a list of all the <DIV>s in Whiteboard.
 */
