@@ -6,9 +6,9 @@
         <meta name="generator" content="WordPress"> <!-- leave this for stats (or remove for potential security reasons) -->
         <meta name="author" content="Marcus Whybrow">
         
-        <link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
-        <link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">
-        <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie/css" type="text/css" media="screen, projection"><![endif]-->
+        <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/screen.css" type="text/css" media="screen, projection">
+        <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/print.css" type="text/css" media="print">
+        <!--[if lt IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/ie/css" type="text/css" media="screen, projection"><![endif]-->
         <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen, projection">
         
         <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>">
