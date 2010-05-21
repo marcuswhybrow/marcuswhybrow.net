@@ -1,41 +1,32 @@
 <?php get_header(); ?>
-	
-	<div class="page2col">
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<div id="content">
+ <div class="post" id="post-<?php the_ID(); ?>">
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+   <h2><a href="<?php echo get_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+   <?php the_content('<p>Read the rest of this entry &raquo;</p>'); ?>
 
-		<div class="post" id="post-<?php the_ID(); ?>">
-			<div class="post-date-wrapper">
-				<div class="post-date"><?php the_time('M jS') ?><br /><?php the_time('Y') ?></div>
-			</div>
-			<h2><?php the_title(); ?></h2>
+   <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
-			<?php the_content('<p>Read the rest of this entry &raquo;</p>'); ?>
+   <div id="postmeta">
+    <p><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>
+    <p>Categories <?php the_category(', ') ?> | Tags: <?php the_tags(' ', ', ', ' '); ?></p>
+    <!--
+    Social Networking Links if you're interested. Please note, that the following networking links contain invalid XHTML.
+    If you want more social network links, check out this URL: http://brianp.covie.ws/Zp0
+    -->
+    <p>Social Networks: <a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>">Facebook</a>, <a href="http://twitter.com/home?status=<?php the_title(); ?> - <?php the_permalink(); ?>">Twitter</a>,  <a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=<?php the_permalink(); ?>&title=<?php the_title(); ?>&annotation=<?php the_excerpt(); ?>">Google Bookmarks</a>, <a href="http://delicious.com/post?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&notes=<?php the_excerpt(); ?>">del.icio.us</a>, <a href="http://www.stumbleupon.com/submit?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>">StumbleUpon</a>, <a href="http://digg.com/submit?phase=2&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&bodytext=<?php the_excerpt(); ?>">Digg</a>, <a href="http://posterous.com/share?linkto=<?php the_permalink(); ?>&title=<?php the_title(); ?>&selection=<?php the_excerpt(); ?>">Reddit</a>, <a href="http://posterous.com/share?linkto=<?php the_permalink(); ?>&title=<?php the_title(); ?>&selection=<?php the_excerpt(); ?>">Posterous</a>.</p>
+    <p>You can follow any follow up comments to this entry through the <?php comments_rss_link('RSS 2.0'); ?> feed.</p>
+   </div><!-- end #postmeta -->
 
-			<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-			<?php the_tags( '<p>Tags: ', ', ', '</p>'); ?>
-
-		</div>
-		
-		<!-- Commnets -->
-
-		<?php comments_template(); ?>
-		
-		<!-- END Comments -->
-		
-		<ul>
-			<li><?php next_post_link('&laquo; Older Entries') ?></li>
-			<li><?php previous_post_link('Newer Entries &raquo;') ?></li>
-		</ul>
-
-		<?php endwhile; else: ?>
-
-		<p>Sorry, no posts matched your criteria.</p>
-
-	<?php endif; ?>
-	
-	</div> <!-- END #single-post -->
+  <?php comments_template(); ?>
+  <?php endwhile; else: ?>
+   <p><strong>There has been a glitch in the Matrix.</strong><br />
+   There is nothing to see here. No matter how many times you click 'refresh.'</p>
+   <p>Please try somewhere else.</p>
+  <?php endif; ?>
+ </div><!-- end .post & #post"#" -->
+</div><!-- end #content -->
 
 <?php get_sidebar(); ?>
-
 <?php get_footer(); ?>

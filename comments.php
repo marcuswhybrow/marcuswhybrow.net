@@ -1,110 +1,106 @@
-<?php // Do not delete these lines
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
+<?php
 
-	if (!empty($post->post_password)) { // if there's a password
-		if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-			?>
+// Do not delete these lines or the Matrix will implode. or explode. I can't remember. But whichever it is, it isn't good.
+ if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
+  die ('Please do not load this page directly or we will hunt you down. Thanks and have a great day!');
 
-			<p>This post is password protected. Enter the password to view comments.</p>
-
-			<?php
-			return;
-		}
-	}
-
-	/* This variable is for alternating comment background */
-	$oddcomment = 'class="alt" ';
-	
-	/* 
-	YOU CAN START EDITING HERE !!!!!!!!!!!!!!!!!!!
-	*/
+ if ( post_password_required() ) { ?>
+  <p class="nocomments">This post is top secret and password protected. Enter the password to view comments. (do it within 10 seconds or your computer may explode.)</p>
+ <?php
+  return;
+ }
 ?>
 
-<?php if ($comments) : ?>
-	<h3 id="comments-title"><?php comments_number('No Responses', 'One Response', '% Responses' );?></h3>
+<div id="comments">
+<?php if ( have_comments() ) : ?>
+ <h3><?php comments_number('No Comments', '1 Comment', '% Comments' );?> to <u><?php the_title(); ?></u></h3>
 
-	<ol id="comments">
+ <ol id="comments_list">
+  <?php foreach ($comments as $comment) : ?>
+  <?php $comment_type = get_comment_type(); ?><?php if($comment_type == 'comment') { ?>
+   <li class="<?php if (the_author('', false) == get_comment_author()) echo 'author'; else echo $oddcomment; ?>" id="comment-<?php comment_ID() ?>">
+    <div class="comments_meta">
+     <p>by <?php comment_author_link()?></p>
+     <p>On <?php comment_date('F j, Y') ?> at <?php comment_time()?></p>
 
-	<?php foreach ($comments as $comment) : ?>
+    </div>
+   <?php if ($comment->comment_approved == '0') : ?>
+    <em>Your comment is awaiting moderation.</em>
+   <?php endif; ?>
+    <div class="comment_text">
+     <?php comment_text(); ?>
+    </div>
+   </li>
+   <?php /* Changes every other comment to a different class */	
+    if ('alt' == $oddcomment){
+     $oddcomment = 'standard';
+    }
+     else {
+     $oddcomment = 'alt';
+    }
+   ?>
+  <?php } else { $trackback = true; } /* End of is_comment statement */ ?>
+  <?php endforeach; /* end for each comment */ ?>
+ </ol>
 
-		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-			<div class="comment-meta clearfix">
-				<?php echo get_avatar( $comment, 32 ); ?>
-				<p class="comment-intro"><cite><?php comment_author_link() ?></cite> Says:</p>
-				<?php if ($comment->comment_approved == '0') : ?>
-				<p>Your comment is awaiting moderation.</p>
-				<?php endif; ?>
-				<?php edit_comment_link('edit','&nbsp;&nbsp;',''); ?>
-				<p class="comment-date"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a></p>
-			</div>
-			<div class="comment-content"><?php comment_text() ?></div>
-		</li>
+<?php if ($trackback == true) { ?>
+<h3>Trackbacks</h3>
+<ol>
+<?php foreach ($comments as $comment) : ?>
+<?php $comment_type = get_comment_type(); ?>
+<?php if($comment_type != 'comment') { ?>
+<li><?php comment_author_link() ?></li>
+<?php } ?>
+<?php endforeach; ?>
+</ol>
+<?php } ?>
 
-	<?php
-		/* Changes every other comment to a different class */
-		$oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : '';
-	?>
+ <?php else : ?>
 
-	<?php endforeach; /* end for each comment */ ?>
-
-	</ol>
-
- <?php else : // this is displayed if there are no comments so far ?>
-
-	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
-
-	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p>Comments are closed.</p>
+	<?php if ( !comments_open() ) : //if comments are closed ?>
+		<p class="nocomments">Comments are closed.</p>
 
 	<?php endif; ?>
 <?php endif; ?>
+</div><!-- end #comments -->
 
-<?php if ('open' == $post->comment_status) : ?>
+<?php if ( comments_open() ) : ?>
 
-<div id="comment-reply">
+<div class="comments_reply">
 
-	<h3 id="respond">Leave a Reply</h3>
-	
-	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-	<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
-	<?php else : ?>
-	
-	<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-	
-		<fieldset>
-	
-		<?php if ( $user_ID ) : ?>
-	
-		<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url('http://marcuswhybrow.net/'); ?> " title="Log out of this account">Log out &raquo;</a></p>
-	
-		<?php else : ?>
-	
-		<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
-		<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-		
-		<label for="email">Email <?php if ($req) echo "(required)"; ?></label>
-		<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-		
-		<label for="url">Website</label>
-		<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-		
-		<?php endif; ?>
-		<label for="comment">Message</label>
-		<textarea name="comment" id="comment" cols="100%" rows="6" tabindex="4"></textarea>
-		
-		<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-		<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-		<?php do_action('comment_form', $post->ID); ?>
-		
-		</fieldset>
-	
-	</form>
+ <h3><?php comment_form_title( 'Leave a Reply', 'Leave a Reply to %s' ); ?></h3>
 
-</div>
+ <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : //if visitors must be logged in to comment ?>
+  <p>Sorry, but you must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
+ <?php else : ?>
 
-<?php endif; // If registration required and not logged in ?>
+ <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+  <?php if ( is_user_logged_in() ) : //if user is logged in, displays username and option to log out ?>
+   <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
+  <?php else : ?>
 
-<?php endif; // if you delete this the sky will fall on your head ?>
+  <p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+  <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
+
+  <p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+  <label for="email"><small>Mail <small>(will not be published or shared)</small> <?php if ($req) echo "(required)"; ?></small></label></p>
+
+  <p><input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
+  <label for="url"><small>Website</small></label></p>
+  <?php endif; ?>
+
+  <p><small>You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>
+  <p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+  <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+  <?php comment_id_fields(); ?>
+  </p>
+  <?php do_action('comment_form', $post->ID); ?>
+ </form>
+
+ <p>By submitting a comment here you grant <?php bloginfo('name'); ?> a perpetual license to reproduce your words and name/web site in attribution. Inappropriate or irrelevant comments will be removed at an admin's discretion.</p>
+
+ <?php endif; // If registration required and not logged in ?>
+</div><!-- end .comments_reply -->
+
+<?php endif; // if you delete this the Matrix will break and will hunt you down for revenge ?>

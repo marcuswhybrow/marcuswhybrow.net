@@ -1,74 +1,33 @@
 <?php get_header(); ?>
 
-	<div id="blog">
-	
-		<h2>Blog</h2>
+<div id="content">
+ <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+ <h2><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+ <p>Written on <?php the_time('F j, Y'); ?> at <?php the_time() ?>, by <?php the_author() ?></p>
 
-	<?php if (have_posts()) : ?>
-	
-		<!-- START posts -->
+ <?php the_content(__('Read more'));?>
 
-		<?php while (have_posts()) : the_post(); ?>
+ <div class="postmeta">
+  <p><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></p>
+  <p>Category <?php the_category(', ') ?> | Tags: <?php the_tags(' ', ',', ' '); ?></p>
+  <!--
+   Social Networking Links if you're interested. Please note, that the following networking links contain invalid XHTML.
+   If you want more social network links, check out this URL: http://brianp.covie.ws/Zp0
+   -->
+   <p>Social Networks: <a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>">Facebook</a>, <a href="http://twitter.com/home?status=<?php the_title(); ?> - <?php the_permalink(); ?>">Twitter</a>,  <a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=<?php the_permalink(); ?>&title=<?php the_title(); ?>&annotation=<?php the_excerpt(); ?>">Google Bookmarks</a>, <a href="http://delicious.com/post?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&notes=<?php the_excerpt(); ?>">del.icio.us</a>, <a href="http://www.stumbleupon.com/submit?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>">StumbleUpon</a>, <a href="http://digg.com/submit?phase=2&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&bodytext=<?php the_excerpt(); ?>">Digg</a>, <a href="http://posterous.com/share?linkto=<?php the_permalink(); ?>&title=<?php the_title(); ?>&selection=<?php the_excerpt(); ?>">Reddit</a>, <a href="http://posterous.com/share?linkto=<?php the_permalink(); ?>&title=<?php the_title(); ?>&selection=<?php the_excerpt(); ?>">Posterous</a>.</p>
+ </div><!-- end .postmeta -->
 
-			<div class="post" id="post-<?php the_ID(); ?>">
-				<div id="test" class="post-date-wrapper">
-					<div class="post-date" title="<?php the_time('l, F jS, Y') ?>"><?php the_time('M jS') ?><br /><?php the_time('Y') ?></div>
-				</div>
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				
-				<?php the_content('Read the rest of this entry &raquo;'); ?>
+ <?php endwhile; else: ?>
+  <p><strong>There has been a glitch in the Matrix.</strong><br />
+  There is nothing to see here.</p>
+  <p>Please try somewhere else.</p>
+ <?php endif; ?>
 
-				<!--<p><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p>-->
-			</div>
+ <div class="postnavigation">
+  <p><?php next_posts_link('&laquo; Older Entries') ?><?php previous_posts_link(' | Newer Entries &raquo;') ?></p>
+ </div> <!-- end .postnavigation -->
 
-		<?php endwhile; ?>
-		
-		<!-- END posts -->
-		
-		<ul>
-			<li><?php next_posts_link('&laquo; Older Entries') ?></li>
-			<li><?php previous_posts_link('Newer Entries &raquo;') ?></li>
-		</ul>
-		
-	<?php else : ?>
+</div> <!-- end #content -->
 
-		<h2>Not Found</h2>
-		<p>Sorry, but you are looking for something that isn't here.</p>
-		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
-
-	<?php endif; ?>
-
-	</div> <!-- END #blog -->
-	
-	<div id="projects">
-	
-		<a href="http://cs.marcuswhybrow.net/"><img src="http://marcuswhybrow.net/wp-content/themes/MarcusWhybrowTheme/style/images/cs-screen.png" alt="WPS Coursework Screen" class="right" /></a>
-		
-		<h2>Projects</h2>
-		
-		<h3>Computer Science Porject</h3>
-		<p>This new project is going to make sure that all the information I need to pass the exam for each of my modules is documented. Since I cannot revise, I shall instead write it all down in an educational fasion.</p>
-	
-	</div> <!-- END #projects -->
-	
-	<div id="twitter">
-		
-		<div id="profile">
-			<?php echo get_avatar( 'marcus@whybrow.org.uk', '250' ); ?>
-		</div>
-		
-		<?php if (is_user_logged_in()) { ?>
-		<a href="twitter.com/marcuswhybrow">TWEET</a>
-		<?php } ?>
-		
-		<div id="twitter_div">
-			<h2>Twitter Updates</h2>
-			<ul id="twitter_update_list"></ul>
-		</div>
-		
-		<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-		<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/marcuswhybrow.json?callback=twitterCallback2&amp;count=5"></script>
-	
-	</div> <!-- END #twitter -->
-
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,0 +1,8 @@
+# Ignore the whiteboard wordpress blank theme readme
+readme.rtf
+
+# Ignore any .DS_Store files
+.DS_Store
+
+# Ignore any Mac OS X fork files
+._*
