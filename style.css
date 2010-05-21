@@ -8,6 +8,12 @@ Author URI: http://marcuswhybrow.net
 A modification of the Whiteboard blank theme for Wordpress (http://whiteboardframework.com/)
 */
 
+/*
+ * Fonts
+ */
+
+@fontface                           { font-family: "League Gothic"; src: url(./fonts/LeagueGothic.otf); }
+
 body                                { font-family: Palatino,Georgia,"Times New Roman",Times,serif; font-size: 18px; }
 
 .menu ul                            { list-style: none; margin: 0; padding: 0; }
@@ -34,5 +40,5 @@ Here is a list of all the <DIV>s in Whiteboard.
  * Post Styles
  */
 
-.post h2                            { font-family: LeagueGothicRegular,Impact,sans-serif; text-transform: uppercase; }
+.post h2                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; }
 .post h2 a                          { text-decoration: none; }
