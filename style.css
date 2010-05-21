@@ -21,8 +21,12 @@ A modification of the Whiteboard blank theme for Wordpress (http://whiteboardfra
 
 body                                { font-family: Palatino,Georgia,"Times New Roman",Times,serif; font-size: 18px; }
 
-#header                             { padding-bottom: 30px; }
+#header                             {  }
 #header h1                          { padding-top: 0.5em; }
+#header h1 a                        { color: #aaa; text-decoration: none; text-shadow: 2px 2px 0px rgba(255,255,255,0.5); font-family: "League Gothic",Impact,sans-serif; font-size: 2em; }
+#header p                           { color: #888; text-shadow: 0 2px 0 rgba(255,255,255,0.5); }
+
+#header-wrapper                     { margin: 10px 10px 40px 10px; background-color: rgba(0,0,0,0.1); }
 
 .menu ul                            { list-style: none; margin: 0; padding: 0; }
 .menu ul li                         { display: inline; padding-right: 5px; }
@@ -59,6 +63,11 @@ Here is a list of all the <DIV>s in Whiteboard.
 #content h1 a:hover,
 .post h1 a:hover,
 .post h2 a:hover                    { border-bottom: 4px solid #586C78; }
+
+ul.posts                            { font-size: 0.85em; list-style: none; }
+ul.posts li                         { margin-top: 3px; }
+ul.posts span                       { color: #aaaaaa; font-family: Monaco,"Courier New",monospace; font-size: 0.8em; margin-right: 5px; }
+ul.posts a                          { margin-left: 5px; }
 
 .post-date                          { margin-bottom: 0; }
 

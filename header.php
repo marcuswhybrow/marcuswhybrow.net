@@ -20,12 +20,15 @@
 <body>
 
 <div id="container">
-    <div id="header" class="container">
-        <div id="topTitle">
-            <h1><a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
-            <p><?php bloginfo('description'); ?></p>
-        </div><!-- end #topTitle -->
-        <div id="topNav">
-            <?php /* wp_page_menu(); */ ?>
-        </div><!-- end #topNav -->
-    </div><!-- end #header -->
+    <div id="header-wrapper">
+        <div id="header" class="container">
+            <div id="topTitle">
+                <h1><a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
+                <p><?php bloginfo('description'); ?></p>
+            </div><!-- end #topTitle -->
+            <div id="topNav">
+                <?php /* wp_page_menu(); */ ?>
+            </div><!-- end #topNav -->
+            <a href="http://github.com/marcuswhybrow/marcuswhybrow.net/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+        </div><!-- end #header -->
+    </div>
