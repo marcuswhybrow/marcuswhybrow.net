@@ -12,7 +12,7 @@ A modification of the Whiteboard blank theme for Wordpress (http://whiteboardfra
  * Fonts
  */
 
-@fontface                           { font-family: "League Gothic"; src: url(./fonts/LeagueGothic.otf); }
+@font-face                          { font-family: "League Gothic"; src: url('fonts/LeagueGothic.otf'); }
 
 body                                { font-family: Palatino,Georgia,"Times New Roman",Times,serif; font-size: 18px; }
 
@@ -40,5 +40,5 @@ Here is a list of all the <DIV>s in Whiteboard.
  * Post Styles
  */
 
-.post h2                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; }
-.post h2 a                          { text-decoration: none; }
+.post h2                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; }
+.post h2 a                          { text-decoration: none; color: #586C78; }
