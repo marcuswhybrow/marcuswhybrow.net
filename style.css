@@ -24,7 +24,7 @@ body                                { font-family: Palatino,Georgia,"Times New R
 #header                             {  }
 #header h1                          { padding-top: 0.5em; }
 #header h1 a                        { color: #aaa; text-decoration: none; text-shadow: 2px 2px 0px rgba(255,255,255,0.5); font-family: "League Gothic",Impact,sans-serif; font-size: 2em; }
-#header p                           { color: #888; text-shadow: 0 2px 0 rgba(255,255,255,0.5); }
+#header p                           { color: #888; text-shadow: 0 2px 0 rgba(255,255,255,0.5); margin-bottom: 0; padding-bottom: 1.5em; }
 
 #header-wrapper                     { margin: 10px 10px 40px 10px; background-color: rgba(0,0,0,0.1); }
 
