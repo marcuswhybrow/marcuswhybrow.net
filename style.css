@@ -98,6 +98,15 @@ pre                                 { overflow: auto; overflow-y: hidden; font-s
 .wp-caption-text                    { text-align: center; font-size: 0.75em; }
 
 /*
+ * Post Navigation Styles
+ */
+
+.postnavigation                     { margin-bottom: 1.5em; }
+#older-posts                        { text-align: left; }
+#older-posts span                   { margin-left: 1em; }
+#newer-posts                        { text-align: right; float: right; }
+
+/*
  * Comment Styles
  */
 
@@ -107,3 +116,12 @@ pre                                 { overflow: auto; overflow-y: hidden; font-s
 
 .comments_meta p                    { margin-left: 116px; }
 .comments_meta .avatar              { float: left; }
+
+/*
+ * Misc Styles
+ */
+
+#content .disabled                  { color: #ccc; border: none; }
+#content a.disabled:hover           { border: none; cursor: default; }
+
+.spinner                            { margin-left: 1em; position: relative; top: 0.1em; }

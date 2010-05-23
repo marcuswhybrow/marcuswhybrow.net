@@ -16,6 +16,9 @@
         
         <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>">
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/js/global.js"></script>
     </head>
 <body>
 
