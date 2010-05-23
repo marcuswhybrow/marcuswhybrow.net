@@ -6,10 +6,10 @@
         <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
         <?php /* If this is a category archive */ if (is_category()) { ?>
             <h2><span><?php single_cat_title(); ?></span> Posts</h2>
-            <?php $picker = 'category_name=' . single_cat_title(); ?>
+            <?php $picker = 'category_name=' . single_cat_title('', false); ?>
         <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
             <h2>Posts Tagged <span>&#8216;<?php single_tag_title(); ?>&#8217;</span></h2>
-            <?php $picker = 'tag=' . single_tag_title(); ?>
+            <?php $picker = 'tag=' . single_tag_title('', false); ?>
         <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
             <h2>Archive for <span><?php the_time('F jS, Y'); ?></span></h2>
             <?php $picker = 'year=' . get_the_time('Y') . '&monthnum=' . get_the_time('n') . '&day=' . get_the_time('j'); ?>
