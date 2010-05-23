@@ -66,8 +66,11 @@ Here is a list of all the <DIV>s in Whiteboard.
 .post h2                            { font-size: 1.2em; font-weight: bold; color: #000000; margin-top: 2em; }
 .post h3                            { font-size: 1.1em; color: #586C78; text-transform: uppercase; }
 
-.post a                             { color: #BD1550; border-bottom: 1px dotted #BD1550; text-decoration: none; }
-.post a:hover                       { border-bottom: 3px solid #BD1550; }
+#content a,
+#footer a                           { color: #BD1550; border-bottom: 1px dotted #BD1550; text-decoration: none; }
+
+#content a:hover,
+#footer a:hover                     { border-bottom: 0.2em solid #BD1550; }
 
 
 ul.posts                            { font-size: 0.85em; list-style: none; }
