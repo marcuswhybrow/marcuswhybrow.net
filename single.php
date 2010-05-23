@@ -3,7 +3,7 @@
 <div id="content" class="container">
     <div class="post" id="post-<?php the_ID(); ?>">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <p class="post-date small">Written on <?php the_time('F j, Y'); ?> at <?php the_time() ?>, by <?php the_author() ?></p>
+            <div class="post-date"><?php the_time('j'); ?><span><?php the_time('S'); ?></span> <?php the_time('M'); ?><br><?php the_time('Y') ?></div>
             <h1><a href="<?php echo get_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
             <?php the_content('<p>Read the rest of this entry &raquo;</p>'); ?>
 

@@ -54,6 +54,8 @@ Here is a list of all the <DIV>s in Whiteboard.
  * Post Styles
  */
 
+div.post                            { position: relative; }
+
 #content h1,
 .post h1                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 
@@ -65,6 +67,12 @@ Here is a list of all the <DIV>s in Whiteboard.
 
 .post h2                            { font-size: 1.2em; font-weight: bold; color: #000000; margin-top: 2em; }
 .post h3                            { font-size: 1.1em; color: #586C78; text-transform: uppercase; }
+
+.post div.post-date                 { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;
+                                      font-size: 1.3em; color: #ccc; position: absolute; text-align: right; width: 500px; left: -530px; top: 5px;
+                                      line-height: 1em; }
+
+.post div.post-date span            { font-size: 0.7em; position: relative; top: -0.4em; }
 
 #content a,
 #footer a                           { color: #BD1550; border-bottom: 1px dotted #BD1550; text-decoration: none; }
