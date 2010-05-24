@@ -74,13 +74,13 @@
         <?php else : ?>
 
             <p>
-                <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label>
+                <label for="author"><small>Name <?php if ($req) echo "*"; ?></small></label>
                 <br>
                 <input type="text" name="author" class="text" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
             </p>
 
             <p>
-                <label for="email"><small>Mail <small>(will not be published or shared)</small> <?php if ($req) echo "(required)"; ?></small></label>
+                <label for="email"><small>EMail <?php if ($req) echo "*"; ?></small></label>
                 <br>
                 <input type="text" name="email" class="text" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
             </p>
@@ -88,7 +88,7 @@
             <p>
                 <label for="url"><small>Website</small></label>
                 <br>
-                <input type="text" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
+                <input type="text" name="url" class="text" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
             </p>
         <?php endif; ?>
 
