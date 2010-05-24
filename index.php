@@ -13,7 +13,7 @@
                 <!-- end post content -->
 
                 <div class="postmeta">
-                    <p><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></p>
+                    <p class="small"><?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?></p>
                 </div><!-- end .postmeta -->
 
                 <hr>
