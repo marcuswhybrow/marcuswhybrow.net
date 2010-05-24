@@ -1,28 +1,28 @@
 <?php get_header(); ?>
 
 <div id="content" class="container">
-    <div class="post" id="post-<?php the_ID(); ?>">
+    <article class="post" id="post-<?php the_ID(); ?>">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <div class="post-date"><?php the_time('j'); ?><span><?php the_time('S'); ?></span> <?php the_time('M'); ?><br><?php the_time('Y') ?></div>
-            <h1><a href="<?php echo get_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+            <header class="post-header">
+                <div class="post-date"><?php the_time('j'); ?><span><?php the_time('S'); ?></span> <?php the_time('M'); ?><br><?php the_time('Y') ?></div>
+                <h1><a href="<?php echo get_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+            </header>
+
             <?php the_content('<p>Read the rest of this entry &raquo;</p>'); ?>
 
-            <hr>
+            <footer class="author-bio">
+                <p class="small"><?php the_author_description(); ?></p>
 
-            <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+                <?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
 
-            <div id="postmeta">
-                <p>Categories <?php the_category(', ') ?> | Tags: <?php the_tags(' ', ', ', ' '); ?> | <?php comments_rss_link('RSS 2.0'); ?></p>
-                <!--
-                Social Networking Links if you're interested. Please note, that the following networking links contain invalid XHTML.
-                If you want more social network links, check out this URL: http://brianp.covie.ws/Zp0
-                -->
-                <p>Social Networks: <a href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>">Facebook</a>, <a href="http://twitter.com/home?status=<?php the_title(); ?> - <?php the_permalink(); ?>">Twitter</a>,  <a href="http://www.google.com/bookmarks/mark?op=edit&bkmk=<?php the_permalink(); ?>&title=<?php the_title(); ?>&annotation=<?php the_excerpt(); ?>">Google Bookmarks</a>, <a href="http://delicious.com/post?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&notes=<?php the_excerpt(); ?>">del.icio.us</a>, <a href="http://www.stumbleupon.com/submit?url=<?php the_permalink(); ?>&title=<?php the_title(); ?>">StumbleUpon</a>, <a href="http://digg.com/submit?phase=2&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&bodytext=<?php the_excerpt(); ?>">Digg</a>, <a href="http://posterous.com/share?linkto=<?php the_permalink(); ?>&title=<?php the_title(); ?>&selection=<?php the_excerpt(); ?>">Reddit</a>, <a href="http://posterous.com/share?linkto=<?php the_permalink(); ?>&title=<?php the_title(); ?>&selection=<?php the_excerpt(); ?>">Posterous</a>.</p>
-            </div><!-- end #postmeta -->
+                <div id="postmeta">
+                    <p class="small">Categories <?php the_category(', ') ?> | Tags: <?php the_tags(' ', ', ', ' '); ?> | <?php comments_rss_link('RSS 2.0'); ?></p>
+                </div><!-- end #postmeta -->
 
-            <hr>
+                <hr>
 
-            <?php comments_template(); ?>
+                <?php comments_template(); ?>
+            </footer>
             
         <?php endwhile; else: ?>
 
@@ -34,7 +34,7 @@
             <p>Please try somewhere else.</p>
         <?php endif; ?>
         
-    </div><!-- end .post & #post"#" -->
+    </article><!-- end .post & #post"#" -->
 </div><!-- end #content -->
 
 <?php /* get_sidebar(); */ ?>
