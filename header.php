@@ -10,9 +10,9 @@
     <?php wp_head(); ?>	
     <!-- end Wordpress head -->
         
-    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/print.css" type="text/css" media="print">
-    <!--[if lt IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/blueprint/ie/css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/blueprint/ie/css" type="text/css" media="screen, projection"><![endif]-->
     <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/blueprint/plugins/buttons/screen.css" type="text/css" media="screen, projection">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen, projection">
         
@@ -20,7 +20,7 @@
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php bloginfo('template_directory') ?>/js/global.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/global.js"></script>
 
 </head>
 <body>
