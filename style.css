@@ -54,7 +54,8 @@ Here is a list of all the <DIV>s in Whiteboard.
  * Post Styles
  */
 
-div.post                            { position: relative; }
+.post,
+.post-header                        { position: relative; }
 
 #content h1,
 .post h1                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
@@ -66,7 +67,7 @@ div.post                            { position: relative; }
 .post h1 a:hover                    { border-bottom: 4px solid #586C78; }
 
 .post h2                            { font-size: 1.2em; font-weight: bold; color: #000000; margin-top: 2em; }
-.post h3                            { font-size: 1.1em; color: #586C78; text-transform: uppercase; }
+.post h3                            { font-size: 1.1em; color: #586C78; text-transform: uppercase; margin-top: 2em; }
 
 .post div.post-date                 { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;
                                       font-size: 1.3em; color: #ccc; position: absolute; text-align: right; width: 500px; left: -530px; top: 5px;
@@ -74,12 +75,16 @@ div.post                            { position: relative; }
 
 .post div.post-date span            { font-size: 0.7em; position: relative; top: -0.4em; }
 
+.post footer                        { margin-top: 30px; }
+
 #content a,
 #footer a                           { color: #BD1550; border-bottom: 1px dotted #BD1550; text-decoration: none; }
 
 #content a:hover,
 #footer a:hover                     { border-bottom: 0.2em solid #BD1550; }
 
+#content a.button                   { color: inherit; border-bottom: inherit; }
+#content a.button:hover             { border-bottom: inherit; }
 
 ul.posts                            { font-size: 0.85em; list-style: none; }
 ul.posts li                         { margin-top: 3px; }
@@ -125,3 +130,5 @@ pre                                 { overflow: auto; overflow-y: hidden; font-s
 #content a.disabled:hover           { border: none; cursor: default; }
 
 .spinner                            { margin-left: 1em; position: relative; top: 0.1em; }
+
+.author-bio                         { margin-top: 4em; }
