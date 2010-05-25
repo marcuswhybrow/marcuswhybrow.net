@@ -132,3 +132,9 @@ pre                                 { overflow: auto; overflow-y: hidden; font-s
 .spinner                            { margin-left: 1em; position: relative; top: 0.1em; }
 
 .author-bio                         { margin-top: 4em; }
+
+/*
+ * Form Styles
+ */
+
+form p                              { margin: 0; }

@@ -50,4 +50,8 @@ $(function() {
         });
         return false;
     });
+
+    // Forms
+    $('form').shadowLabels();
+    
 });
