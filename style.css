@@ -23,10 +23,10 @@ body                                { font-family: Palatino,Georgia,"Times New R
 
 #header                             {  }
 #header h1                          { padding-top: 0.5em; }
-#header h1 a                        { color: #aaa; text-decoration: none; text-shadow: 2px 2px 0px rgba(255,255,255,0.5); font-family: "League Gothic",Impact,sans-serif; font-size: 2em; }
+#header h1 a                        { color: #aaa; text-decoration: none; text-shadow: 2px 2px 0px rgba(255,255,255,0.5); font-family: "League Gothic",sans-serif; font-size: 2em; }
 #header p                           { color: #888; text-shadow: 0 2px 0 rgba(255,255,255,0.5); margin-bottom: 0; padding-bottom: 1.5em; }
 
-#header-wrapper                     { margin: 10px 10px 40px 10px; background-color: rgba(0,0,0,0.1); }
+#header-wrapper                     { margin: 10px 10px 40px 10px; /* background-color: rgba(0,0,0,0.1); */ }
 
 .menu ul                            { list-style: none; margin: 0; padding: 0; }
 .menu ul li                         { display: inline; padding-right: 5px; }
@@ -58,7 +58,7 @@ Here is a list of all the <DIV>s in Whiteboard.
 .post-header                        { position: relative; }
 
 #content h1,
-.post h1                            { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
+.post h1                            { font-family: "League Gothic",sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 
 #content h1 a,
 .post h1 a                          { text-decoration: none; color: #586C78; border-bottom: none; }
@@ -69,11 +69,11 @@ Here is a list of all the <DIV>s in Whiteboard.
 .post h2                            { font-size: 1.2em; font-weight: bold; color: #000000; margin-top: 2em; }
 .post h3                            { font-size: 1.1em; color: #586C78; text-transform: uppercase; margin-top: 2em; }
 
-.post div.post-date                 { font-family: "League Gothic",Impact,sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px;
-                                      font-size: 1.3em; color: #ccc; position: absolute; text-align: right; width: 500px; left: -530px; top: 5px;
-                                      line-height: 1em; }
+.post div.post-date                 { font-family: "League Gothic",sans-serif; text-transform: uppercase; font-weight: normal; letter-spacing: 1px;
+                                      font-size: 1.3em; color: #ccc; position: absolute; text-align: right; width: 500px; left: -530px; top: 7px;
+                                      line-height: 0.8em; }
 
-.post div.post-date span            { font-size: 0.7em; position: relative; top: -0.4em; }
+.post div.post-date span            { font-size: 0.6em; position: relative; top: -0.5em; }
 
 .post footer                        { margin-top: 30px; }
 
