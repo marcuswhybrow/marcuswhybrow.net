@@ -74,7 +74,7 @@ ins                                 { text-decoration: none; }
 .post,
 .post-header                        { position: relative; }
 
-#content                            { padding-top: 30px; }
+#content                            { padding-top: 30px; -webkit-margin-bottom-collapse: separate; }
 #content-wrapper                    { background-color: #fefefe; }
 
 #content h1                         { font-family: "League Gothic",sans-serif; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
