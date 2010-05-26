@@ -137,6 +137,20 @@ pre                                 { overflow: auto; overflow-y: hidden; font-s
 .comments_meta p                    { margin-left: 116px; }
 .comments_meta .avatar              { float: left; }
 
+/* Disqus */
+
+#dsq-content a:hover                { border-bottom: none; }
+
+#dsq-global-toolbar                 { display: none !important; }
+#dsq-new-post                       { font-size: 18px !important; }
+#dsq-form-area                      { font-size: 12px !important; }
+.dsq-login-buttons                  { background: none !important; margin-bottom: 0 !important; }
+#dsq-comments-title                 { font-size: 18px !important; font-size: 1.1em; }
+.dsq-options                        { font-size: 18px !important; background: none !important; margin-bottom: 0 !important; }
+#dsq-comments                       { font-size: 18px !important; }
+.dsq-comment-footer-right span      { float: right !important; }
+.dsq-brlink                         { display: none !important; }
+
 /* Misc Styles */
 
 #content .disabled                  { color: #ccc; border: none; }
