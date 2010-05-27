@@ -35,7 +35,7 @@
             <div class="postnavigation">
                 <div class="container">
                     <div id="older-posts" class="span-8"><?php next_posts_link('&laquo; Older Entries') ?></div>
-                    <div id="newer-posts" class="span-8"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
+                    <div id="newer-posts" class="span-8 last"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
                 </div>
             </div><!-- end .postnavigation -->
 

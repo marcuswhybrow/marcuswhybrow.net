@@ -44,7 +44,7 @@
                     <li id="tn-home"><a href="/">Home<span>Get the Latest</span></a></li>
                     <li id="tn-cv"><a href="/cv/">In Depth<span>Curriculum Vitae</span></a></li>
                     <li id="tn-projects"><a href="/projects/">Projects<span>My Bits of Code</span></a></li>
-                    <li><script type="text/javascript">
+                    <li class="last"><script type="text/javascript">
                     //<![CDATA[
                     <!--
                     var x="function f(x){var i,o=\"\",ol=x.length,l=ol;while(x.charCodeAt(l/13)!" +
@@ -63,6 +63,17 @@
                     <div class="clear"></div>
                 </ul>
             </div><!-- end #topNav -->
-            <a href="http://github.com/marcuswhybrow/marcuswhybrow.net/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+            
+            <div id="social-media">
+                <ul>
+                    <li class="sm-github"><a href="http://github.com/marcuswhybrow">github.com</a></li>
+                    <li class="sm-flickr"><a href="http://flickr.com/marcuswhybrow">flickr.com</a></li>
+                    <li class="sm-twitter"><a href="http://twitter.com/marcuswhybrow">twitter.com</a></li>
+                    <li class="sm-ember"><a href="http://emberapp.com/marcuswhybrow">emberapp.com</a></li>
+                    <li class="sm-facebook"><a href="http://facebook.com/marcuswhybrow">facebook.com</a></li>
+                    <li class="sm-lastfm"><a href="http://last.fm/user/marcuswhybrow">last.fm</a></li>
+                    <li class="sm-linkedin"><a href="http://uk.linkedin.com/in/marcuswhybrow">linkedin.com</a></li>
+                </ul>
+            </div>
         </div><!-- end #header -->
     </div>

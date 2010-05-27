@@ -38,8 +38,7 @@ $(function() {
             }
             
             // Insert the new posts into the page
-            var $div = $('<div></div>');
-            $div.hide();
+            var $div = $('<div></div>').hide();
             $target.append($div);
             
             $posts.each(function() {
@@ -50,8 +49,4 @@ $(function() {
         });
         return false;
     });
-
-    // Forms
-    $('form').shadowLabels();
-    
 });

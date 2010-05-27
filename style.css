@@ -24,7 +24,7 @@ A modification of the Whiteboard blank theme for Wordpress (http://whiteboardfra
 
 body                                { font-family: Palatino,Georgia,"Times New Roman",Times,serif; font-size: 18px; background-color: #eee; }
 
-#header                             {  }
+#header                             { position: relative; }
 #header h1                          { margin-bottom: 0.2em; margin-top: 0.1em; }
 #header h1 a                        { color: #633C16; text-decoration: none; text-shadow: 0 1px 0 #fff; font-family: sans-serif; font-size: 0.6em; }
 #header p                           { color: #888; text-shadow: 0 2px 0 rgba(255,255,255,0.5); margin-bottom: 0; padding-bottom: 1.5em; }
@@ -37,6 +37,7 @@ body                                { font-family: Palatino,Georgia,"Times New R
 #topNav ul                          { list-style: none; padding: 0; margin: 0; margin-bottom: 20px; }
 #topNav li                          { float: left; padding: 0 40px 0 0; font-family: "Century Gothic",Futura,Helvetica,sans-serif; font-size: 24px;
                                       text-transform: uppercase; line-height: 24px; }
+#topNav li.last                     { padding-right: 0; }
 #topNav li a                        { display: block; letter-spacing: -1px; position: relative; text-decoration: none; border-bottom: 3px solid transparent;
                                       color: #aaa; text-shadow: 0 1px 0 #fff; }
 #topNav li a span                   { display: block; font-size: 14px; letter-spacing: 0; }
@@ -48,6 +49,22 @@ body#projects li#tn-projects a,
 
 #topNav li a.disabled               { cursor: help; }
 #topNav li a.disabled:hover         { border-bottom-color: transparent; color: #999; }
+
+
+#social-media                       { position: absolute; top: 15px; right: 0; }
+#social-media ul                    { list-style: none; margin: 0; padding: 0; }
+#social-media ul li                 { float: left; }
+#social-media ul li a               { width: 32px; display: block; height: 0; padding-top: 32px; overflow: hidden; }
+
+.sm-github a                        { background-image: url('images/social-media/github_32_sprite.png'); }
+.sm-ember a                         { background-image: url('images/social-media/ember_32_sprite.png'); }
+.sm-facebook a                      { background-image: url('images/social-media/facebook_32_sprite.png'); }
+.sm-flickr a                        { background-image: url('images/social-media/flickr_32_sprite.png'); }
+.sm-linkedin a                      { background-image: url('images/social-media/linkedin_32_sprite.png'); }
+.sm-twitter a                       { background-image: url('images/social-media/twitter_32_sprite.png'); }
+.sm-lastfm a                        { background-image: url('images/social-media/lastfm_32_sprite.png'); }
+
+#social-media ul li a:hover         { background-position: 0 32px; }
 
 .menu ul                            { list-style: none; margin: 0; padding: 0; }
 .menu ul li                         { display: inline; padding-right: 5px; }
@@ -84,7 +101,7 @@ ins                                 { text-decoration: none; }
 #content h2                         { font-size: 1.2em; font-weight: bold; color: #000000; margin-top: 2em; }
 #content h3                         { font-size: 1.1em; color: #586C78; text-transform: uppercase; margin-top: 2em; }
 
-.post div.post-date                 { font-family: "League Gothic",sans-serif; text-transform: uppercase; font-weight: normal; letter-spacing: 1px;
+.post div.post-date                 { font-family: "League Gothic",sans-serif; text-transform: uppercase; font-weight: normal; letter-spacing: 2px;
                                       font-size: 1.3em; color: #ccc; position: absolute; text-align: right; width: 500px; left: -530px; top: 7px;
                                       line-height: 0.8em; }
 
