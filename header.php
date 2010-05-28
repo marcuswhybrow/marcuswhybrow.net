@@ -20,6 +20,10 @@
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.extendopage.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.jflickrfeed.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.cycle.all.min.js"></script>
+    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.hoverflow.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/global.js"></script>
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     
@@ -27,6 +31,7 @@
         $page = '';
         if (is_page('Curriculum Vitae')) $page = 'cv';
         elseif (is_page('Projects')) $page = 'projects';
+        elseif (is_front_page()) $page = 'front-page';
         else $page = 'home';
     ?>
 
@@ -37,11 +42,11 @@
     <div id="header-wrapper">
         <div id="header" class="container">
             <div id="topTitle">
-                <h1><a href="<?php echo get_option('home'); ?>/" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
+                <h1><a href="/" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
             </div><!-- end #topTitle -->
             <div id="topNav">
                 <ul>
-                    <li id="tn-home"><a href="/">Home<span>Get the Latest</span></a></li>
+                    <li id="tn-home"><a href="/blog/">Blog<span>Get the Latest</span></a></li>
                     <li id="tn-cv"><a href="/cv/">In Depth<span>Curriculum Vitae</span></a></li>
                     <li id="tn-projects"><a href="/projects/">Projects<span>My Bits of Code</span></a></li>
                     <li class="last"><script type="text/javascript">

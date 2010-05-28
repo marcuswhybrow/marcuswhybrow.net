@@ -177,6 +177,12 @@ pre                                 { overflow: auto; overflow-y: hidden; font-s
 
 .author-bio                         { margin-top: 4em; }
 
+.no-top-margin                      { margin-top: 0 !important; }
+
+#front-page #content .container                 { margin-bottom: 40px; }
+#front-page #content .container:first-child     { margin-bottom: 0; }
+#front-page #about                              {}
+
 /* Form Styles */
 
 form p                              { margin: 0; }
@@ -189,3 +195,34 @@ form p                              { margin: 0; }
 #footer #credits                    { color: #aaa; text-shadow: 1px 1px 0 #fff; }
 #footer #credits a                  { color: #aaa; border-color: #aaa; }
 #footer p                           { margin-bottom: 0;}
+
+/* Quick Look (posts list) */
+
+ul#quick-look                       { list-style: none; padding: 0; margin: 0; }
+ul#quick-look li                    { line-height: 1.5em !important; margin-bottom: 0.5em; }
+
+/* Tweets */
+
+#twitter-logo a                     { display: block; height: 0; padding-top: 36px; overflow: hidden; background: no-repeat url('images/twitter-sprite.png');
+                                      border-bottom: none; position: relative; top: -5px; }
+#twitter-logo a:hover               { border-bottom: none; background-position: 0 -36px; }
+
+#tweets ul                          { list-style: none; padding: 0; margin: 0; }
+#tweets li                          { margin-top: 1em; /*line-height: 1em;*/ }
+#tweets li:first-child              { margin-top: 0; }
+
+#tweets .tweet_time                 { font-size: 0.75em; }
+#tweets .tweet_text                 { font-size: 0.75em; }
+
+/* Flickr */
+
+#flickr-logo a                      { display: block; height: 0; padding-top: 30px; overflow: hidden; background: no-repeat url('images/flickr-sprite.png');
+                                      border-bottom: none; }
+#flickr-logo a:hover                { border-bottom: none; background-position: 0 -30px; }
+
+#flickr                             { list-style: none; height: 232px; padding: 0; margin: 0; position: relative; }
+#flickr li                          { width: 350px; height: 232px; }
+#flickr img                         { width: 100%; position: absolute; }
+#flickr div                         { font-family: arial; font-size: 12px; background-color: rgba(0,0,0,0.8); color: rgba(255,255,255,0.9);
+                                      position: absolute; bottom: 0px; right: 0; left: 0;
+                                      padding: 4px 8px; text-transform: uppercase; cursor: default; }
