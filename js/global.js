@@ -1,5 +1,23 @@
 $(function() {
     
+    // Footnotes
+    var $footnotes = $('#footnotes');
+    $footnotes.remove();
+    
+    $('a.footnote-reference').click(function() {
+        var $this = $(this);
+        var hash = $this.attr('href');
+        var text = $footnotes.find(hash).text();
+        var $p = $this.parent('p');
+        
+        if ($(hash).length == 0) {
+            $p.after('<aside id="' + hash.substr(1) + '" class="inline-footnote" style="display:none">' + text + '</aside>');
+            $(hash).slideDown();
+        }
+        
+        return false;
+    });
+    
     // Activate extendo page (my plugin)
     $('#older-posts a').extendoPage('#post-list .post', '#post-list', {
         spinnerImage: '/wp-content/themes/MarcusWhybrowTheme/images/ajax-loader.gif',
@@ -20,6 +38,11 @@ $(function() {
         loading_text: 'loading tweets...'
     });
     
+    var width;
+    var height;
+    var scale = 1.5;
+    var isOver = false;
+    
     $('#flickr').jflickrfeed({
         limit: 20,
         qstrings: {
@@ -27,30 +50,19 @@ $(function() {
         },
         itemTemplate: '<li><img src="{{image}}" alt="" /><div>{{title}}</div></li>'
     }, function(data) {
+        
         $('#flickr div').hide();
         
         $('#flickr').cycle({
-            timeout: 10000
+            timeout: 5 * 1000,
+            fx: 'scrollUp',
         });
         
         $('#flickr li').hover(function(e) {
-            var $this = $(this);
-            $this.hoverFlow(e.type, {
-                width: '360px',
-                height: '239px',
-                left: '-5px',
-                top: '-4px'
-            }, 200);
-            $this.children('div').fadeIn(100)
+            $(this).children('div').fadeIn(100);
+        
         }, function(e) {
-            var $this = $(this);
-            $this.children('div').fadeOut(100);
-            $this.hoverFlow(e.type, {
-                width: '350px',
-                height: '232px',
-                left: '0',
-                top: '0'
-            }, 200);
+            $(this).children('div').fadeOut(100);
         });
     });
 });

@@ -11,7 +11,7 @@ A modification of the Whiteboard blank theme for Wordpress (http://whiteboardfra
 /* Colours
 
     #586C78 - Dull Blue
-    #BD1550 - link Red
+     - link Red
 
 */
 
@@ -100,6 +100,7 @@ ins                                 { text-decoration: none; }
 
 #content h2                         { font-size: 1.2em; font-weight: bold; color: #000000; margin-top: 2em; }
 #content h3                         { font-size: 1.1em; color: #586C78; text-transform: uppercase; margin-top: 2em; }
+#content h4                         { font-size: 1.1em; margin-top: 2em; }
 
 .post div.post-date                 { font-family: "League Gothic",sans-serif; text-transform: uppercase; font-weight: normal; letter-spacing: 2px;
                                       font-size: 1.3em; color: #ccc; position: absolute; text-align: right; width: 500px; left: -530px; top: 7px;
@@ -178,10 +179,27 @@ pre                                 { overflow: auto; overflow-y: hidden; font-s
 .author-bio                         { margin-top: 4em; }
 
 .no-top-margin                      { margin-top: 0 !important; }
+.no-left-padding                    { padding-left: 0 !important; }
+
+#projects ul                        { list-style: none; }
 
 #front-page #content .container                 { margin-bottom: 40px; }
 #front-page #content .container:first-child     { margin-bottom: 0; }
-#front-page #about                              {}
+#front-page #about                              {  }
+
+.footnote-reference                 { border-bottom: none !important; font-weight: bold; line-height: 1em; }
+.footnote-reference:hover           { border-bottom: none !important; }
+
+.footnote-reference sup             { padding: 2px 2px; padding-bottom: 0; margin: 0 2px; }
+.footnote-reference:hover sup       { background-color: #BD1550; color: white;
+                                      -moz-border-radius: 2px; -webkit-border-radius: 2px;}
+                                      
+ol#footnotes                        { font-size: 0.8em; border-top: 1px solid #ddd; padding: 20px 0 0 40px; margin: 0; }
+
+aside.inline-footnote               { margin-bottom: 30px; font-size: 16px; line-height: 1.75em; padding: 10px 15px; text-shadow: 0 1px 0 #FFFFFF;
+                                      background: #eee; color: #333; }
+
+code                                { background-color: #eee; font-size: 0.8em; padding: 2px 6px; border: 1px solid #ddd; }
 
 /* Form Styles */
 
