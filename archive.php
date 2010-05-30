@@ -7,25 +7,25 @@
             <?php if (have_posts()) : ?>
                 <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
                 <?php /* If this is a category archive */ if (is_category()) { ?>
-                    <h2><span><?php single_cat_title(); ?></span> Posts</h2>
+                    <h2 class="no-top-margin"><span><?php single_cat_title(); ?></span> Posts</h2>
                     <?php $picker = 'category_name=' . single_cat_title('', false); ?>
                 <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-                    <h2>Posts Tagged <span>&#8216;<?php single_tag_title(); ?>&#8217;</span></h2>
+                    <h2 class="no-top-margin">Posts Tagged <span>&#8216;<?php single_tag_title(); ?>&#8217;</span></h2>
                     <?php $picker = 'tag=' . single_tag_title('', false); ?>
                 <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-                    <h2>Archive for <span><?php the_time('F jS, Y'); ?></span></h2>
+                    <h2 class="no-top-margin">Archive for <span><?php the_time('F jS, Y'); ?></span></h2>
                     <?php $picker = 'year=' . get_the_time('Y') . '&monthnum=' . get_the_time('n') . '&day=' . get_the_time('j'); ?>
                 <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-                    <h2>Archive for <span><?php the_time('F, Y'); ?></span></h2>
+                    <h2 class="no-top-margin">Archive for <span><?php the_time('F, Y'); ?></span></h2>
                     <?php $picker = 'year=' . get_the_time('Y') . '&monthnum=' . get_the_time('n'); ?>
                 <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-                    <h2>Archive for <span><?php the_time('Y'); ?></span></h2>
+                    <h2 class="no-top-margin">Archive for <span><?php the_time('Y'); ?></span></h2>
                     <?php $picker = 'year=' . get_the_time('Y'); ?>
                 <?php /* If this is an author archive */ } elseif (is_author()) { ?>
                     <?php the_post(); $author = get_userdata($post->post_author); ?>
-                    <h2>All Posts by <span><?php echo $author->first_name; ?></span></h2>
+                    <h2 class="no-top-margin">All Posts by <span><?php echo $author->first_name; ?></span></h2>
                 <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-                    <h2>Blog Archives</h2>
+                    <h2 class="no-top-margin">Blog Archives</h2>
                 <?php } ?>
 
                 <ul class="posts">
